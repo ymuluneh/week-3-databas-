@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>iPhone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- script code for data fetch from my data base -->
+<!-- <script>
+  fetch("http://127.0.0.1:3000/iphones")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      data.forEach((item) => {
+        document.body.innerHTML += `
+          <div>
+            <h2>${item.product_name}</h2>
+            <img src="${item.product_image}" width="200" />
+            <p>Link: <a href="${item.product_url}" target="_blank">${item.product_url}</a></p>
+            <p>Description: ${item.product_Brife_Discription}</p>
+            <p>Starting at: ${item.starting_price}</p>
+            <p>Range: ${item.price_range}</p>
+            <hr>
+          </div>
+        `;
+      });
+    })
+    .catch((err) => console.error("Error fetching iphones:", err));
+</script> -->
+  </head>
+  <body>
+    <!-- <h2>Apple phone new  generation => </h2> -->
+    <form action="http://127.0.0.1:3000/addiphons" method="POST">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <label for="productName">Product Name</label>
+        <input type="text" name="productName" placeholder="Product Name" required />
+    <br><br>
+
+     <label for="phoneLink">Phone Link</label>
+        <input type="text" name="phoneLink" placeholder="Phone Link" required />
+        <br><br>
+    
+      <label for="imgPath"> image path</label>
+        <input type="text" name="imgPath" placeholder="image path" required />
+        <br><br>
+  
+        <label for="startPrice">start Price</label>
+        <input type="text" name="startPrice" placeholder="start Price" required />
+        <br><br>
+        
+
+        <label for="priceRange">price Range</label>
+        <input type="text" name="priceRange" placeholder="price Range" required />
+        <br><br>
+    
+    <label for="briefDescription">Brief Description</label>
+        <textarea
+          name="briefDescription"
+          placeholder="Brief Description"
+          rows="3"
+          required
+        ></textarea>
+        <br><br>
+         <label for="Description">Full Description</label>
+        <textarea
+          name="Description"
+          placeholder="Full Description" required></textarea>
+        <br><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
